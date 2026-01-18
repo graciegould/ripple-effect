@@ -1,14 +1,14 @@
 import React from 'react';
 import styles from './App.module.scss';
-// import { BasicDemo, ControlledDemo } from './demo';
-import { RippleEffect } from './RippleEffect';
+import { BasicDemo } from './demo/BasicDemo';
+import { ControlledDemo } from './demo/ControlledDemo';
 
 const App: React.FC = () => {
   return (
     <div className={styles.app}>
       {/* Basic Demo */}
-      <RippleEffect
-        imageUrl="/images/tiedye.jpg"
+      <BasicDemo
+        imageUrl="/images/webkins.jpg"
         rippleSize={30}
         rippleStrength={1.0}
         distortionStrength={0.2}
@@ -21,17 +21,17 @@ const App: React.FC = () => {
       />
 
       {/* Controlled Demo */}
-      {/* <RippleEffect
-        imageUrl="/images/water.jpg"
-        rippleSize={30}
-        rippleStrength={1.0}
+      {/* <ControlledDemo
+        imageUrl="/images/bubbles..jpg"
+        rippleSize={40}
+        rippleStrength={1.5}
         distortionStrength={0.2}
         waveSpeed={1.0}
         springStrength={0.005}
         velocityDamping={0.002}
         pressureDamping={0.999}
         enableChromaticAberration={false}
-        chromaticAberrationStrength={1.0}
+        chromaticAberrationStrength={5.0}
       /> */}
     </div>
   );
