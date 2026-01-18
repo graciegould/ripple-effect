@@ -61,7 +61,7 @@ export const ControlledDemo: React.FC<ControlledDemoProps> = (props) => {
     <div className={styles.container}>
       <div className={styles.rippleContainer}>
         <RippleEffect
-          imageUrl="/images/water.jpg"
+          imageUrl="/images/bubbles.jpg"
           rippleSize={rippleSize}
           rippleStrength={rippleStrength}
           distortionStrength={distortionStrength}

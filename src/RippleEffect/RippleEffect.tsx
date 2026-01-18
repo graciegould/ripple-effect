@@ -11,7 +11,7 @@ import { RippleEffectProps } from './types';
  * @example
  * ```tsx
  * <RippleEffect
- *   imageUrl="/images/water.jpg"
+ *   imageUrl="/images/bubbles.jpg"
  *   rippleSize={30}
  *   rippleStrength={1.0}
  *   distortionStrength={0.2}
