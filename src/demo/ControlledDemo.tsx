@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { RippleEffect, DEFAULT_CONFIG } from '../RippleEffect';
+import { RippleEffect, RippleEffectProps, DEFAULT_CONFIG } from '../RippleEffect';
 import styles from './ControlledDemo.module.scss';
+
+export interface ControlledDemoProps extends Omit<RippleEffectProps, 'className' | 'style'> {}
 
 interface SliderProps {
   label: string;
@@ -28,19 +30,19 @@ const Slider: React.FC<SliderProps> = ({ label, value, min, max, step, onChange 
   </div>
 );
 
-export const ControlledDemo: React.FC = () => {
-  const [rippleSize, setRippleSize] = useState<number>(DEFAULT_CONFIG.rippleSize);
-  const [rippleStrength, setRippleStrength] = useState<number>(DEFAULT_CONFIG.rippleStrength);
-  const [distortionStrength, setDistortionStrength] = useState<number>(DEFAULT_CONFIG.distortionStrength);
-  const [waveSpeed, setWaveSpeed] = useState<number>(DEFAULT_CONFIG.waveSpeed);
-  const [springStrength, setSpringStrength] = useState<number>(DEFAULT_CONFIG.springStrength);
-  const [velocityDamping, setVelocityDamping] = useState<number>(DEFAULT_CONFIG.velocityDamping);
-  const [pressureDamping, setPressureDamping] = useState<number>(DEFAULT_CONFIG.pressureDamping);
+export const ControlledDemo: React.FC<ControlledDemoProps> = (props) => {
+  const [rippleSize, setRippleSize] = useState<number>(props.rippleSize ?? DEFAULT_CONFIG.rippleSize);
+  const [rippleStrength, setRippleStrength] = useState<number>(props.rippleStrength ?? DEFAULT_CONFIG.rippleStrength);
+  const [distortionStrength, setDistortionStrength] = useState<number>(props.distortionStrength ?? DEFAULT_CONFIG.distortionStrength);
+  const [waveSpeed, setWaveSpeed] = useState<number>(props.waveSpeed ?? DEFAULT_CONFIG.waveSpeed);
+  const [springStrength, setSpringStrength] = useState<number>(props.springStrength ?? DEFAULT_CONFIG.springStrength);
+  const [velocityDamping, setVelocityDamping] = useState<number>(props.velocityDamping ?? DEFAULT_CONFIG.velocityDamping);
+  const [pressureDamping, setPressureDamping] = useState<number>(props.pressureDamping ?? DEFAULT_CONFIG.pressureDamping);
   const [enableChromaticAberration, setEnableChromaticAberration] = useState<boolean>(
-    DEFAULT_CONFIG.enableChromaticAberration
+    props.enableChromaticAberration ?? DEFAULT_CONFIG.enableChromaticAberration
   );
   const [chromaticAberrationStrength, setChromaticAberrationStrength] = useState<number>(
-    DEFAULT_CONFIG.chromaticAberrationStrength
+    props.chromaticAberrationStrength ?? DEFAULT_CONFIG.chromaticAberrationStrength
   );
 
   const resetToDefaults = () => {

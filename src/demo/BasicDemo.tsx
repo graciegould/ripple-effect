@@ -1,11 +1,13 @@
 import React from 'react';
-import { RippleEffect } from '../RippleEffect';
+import { RippleEffect, RippleEffectProps } from '../RippleEffect';
 import styles from './BasicDemo.module.scss';
 
-export const BasicDemo: React.FC = () => {
+export interface BasicDemoProps extends Omit<RippleEffectProps, 'className' | 'style'> {}
+
+export const BasicDemo: React.FC<BasicDemoProps> = (props) => {
   return (
     <div className={styles.container}>
-      <RippleEffect imageUrl="/images/tiedye.jpg" />
+      <RippleEffect {...props} />
     </div>
   );
 };
