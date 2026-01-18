@@ -2,6 +2,8 @@
 
 A React component that creates an interactive water ripple effect on images using WebGL.
 
+![Basic Demo](./demo/basic-demo.gif)
+
 ## Setup
 
 ```bash
@@ -10,6 +12,8 @@ npm run dev
 ```
 
 ## Usage
+
+### Basic
 
 ```tsx
 import { RippleEffect } from './RippleEffect';
@@ -21,6 +25,21 @@ import { RippleEffect } from './RippleEffect';
   distortionStrength={0.2}
 />
 ```
+
+### Dynamic
+```tsx
+import { ControlledDemo } from './demo/ControlledDemo';
+
+<RippleEffect
+  imageUrl="/images/bubbles.jpg"
+  rippleSize={30}
+  rippleStrength={1.0}
+  distortionStrength={0.2}
+/>
+```
+![Controlled Demo](./demo/controlled-demo.gif)
+
+
 
 ## Props
 
